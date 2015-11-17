@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{8CEAEA61-B1A2-4777-BCBE-C9A129A5F6C5}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Microsoft.CodeAnalysis.Driver</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyName>Driver.Utilities</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'" />
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), build.props))\build.props" />
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.1.37.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.1.37\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArgumentSplitter.cs" />
+    <Compile Include="BrandedVersionAttribute.cs" />
+    <Compile Include="Configuration\ConfigurationBase.cs" />
+    <Compile Include="Configuration\ConfigurationParseContext.cs" />
+    <Compile Include="Configuration\FieldAttribute.cs" />
+    <Compile Include="Configuration\FieldTypes.cs" />
+    <Compile Include="Configuration\NoMinusAttribute.cs" />
+    <Compile Include="DisposableEnumerable.cs" />
+    <Compile Include="DisposableEnumerableView.cs" />
+    <None Include="DriverUtilities.nuspec" />
+    <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="EnvironmentVariables.cs" />
+    <Compile Include="ExceptionStrings.Designer.cs" />
+    <Compile Include="ExitApplicationException.cs" />
+    <Compile Include="FileStreamExtensionMethods.cs" />
+    <Compile Include="FileSystem.cs" />
+    <Compile Include="IAppConfig.cs" />
+    <Compile Include="IEnvironmentVariables.cs" />
+    <Compile Include="IFileSystem.cs" />
+    <Compile Include="KeyEventImportance.cs" />
+    <Compile Include="LineInfo.cs" />
+    <Compile Include="MultiplyByPrimesHash.cs" />
+    <Compile Include="MurmurHash.cs" />
+    <Compile Include="NewLineIndex.cs" />
+    <Compile Include="OffsetInfo.cs" />
+    <Compile Include="Pair.cs" />
+    <Compile Include="PathExtensions.cs" />
+    <Compile Include="ProductVersion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ref.cs" />
+    <Compile Include="ReferenceEqualityComparer`1.cs" />
+    <Compile Include="RentalStream.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SemanticVersion.cs" />
+    <Compile Include="FileSpecifier.cs" />
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="TempDirectory.cs" />
+    <Compile Include="TempFile.cs" />
+    <Compile Include="XmlWriterExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExceptionStrings.resx" />
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="AfterBuild">
+    <Copy SourceFiles="@(MsDiaDeps)" DestinationFolder="$(OutputPath)" />
+    <Exec Command="..\..\.nuget\NuGet.exe pack DriverUtilities.nuspec -Properties id=Driver.Utilities.$(Platform);major=1;minor=0;patch=0;prerelease= -Verbosity Quiet -BasePath $(OutputPath) -OutputDirectory $(OutputPath)" Outputs="$(OutputPath)\*.nupkg -Symbols"/>
+  </Target>
+</Project>
