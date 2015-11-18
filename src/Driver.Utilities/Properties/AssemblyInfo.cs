@@ -4,8 +4,8 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("REPLACEME")]
-[assembly: AssemblyProduct("BinSkim")]
+[assembly: AssemblyTitle("Microsoft Driver Utilities")]
+[assembly: AssemblyProduct("Driver.Utilities")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]

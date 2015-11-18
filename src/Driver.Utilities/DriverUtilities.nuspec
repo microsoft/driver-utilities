@@ -4,14 +4,15 @@
     <id>$id$</id>
     <version>$major$.$minor$.$patch$$prerelease$</version>
     <title>Microsoft Driver Utilities</title>
-    <authors>Microsoft</authors>
+    <authors>@michaelcfanning</authors>
     <owners>@michaelcfanning</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A utility library for building static analysis drivers</description>
-    <releaseNotes>Version $major$.$minor$.$patch$$prerelease$ of BinSkim</releaseNotes>
+    <releaseNotes>Version $major$.$minor$.$patch$$prerelease$ of the Microsoft Driver Utilities</releaseNotes>
     <copyright>Copyright Microsoft 2015</copyright>
+    <licenseUrl>https://github.com/Microsoft/driver-utilities/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/microsoft/driver-utilities</projectUrl>
-    <tags>Binary Analysis</tags>
+    <tags>command line driver utilities static analysis</tags>
   </metadata>
   <files>
     <file src='Driver.Utilities.dll' target='lib\net40\Driver.Utilities.dll'/>
