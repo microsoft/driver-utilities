@@ -103,6 +103,6 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterBuild">
     <Copy SourceFiles="@(MsDiaDeps)" DestinationFolder="$(OutputPath)" />
-    <Exec Command="..\..\.nuget\NuGet.exe pack DriverUtilities.nuspec -Properties id=Driver.Utilities.$(Platform);major=1;minor=0;patch=0;prerelease= -Verbosity Quiet -BasePath $(OutputPath) -OutputDirectory $(OutputPath)" Outputs="$(OutputPath)\*.nupkg -Symbols"/>
+    <Exec Command="..\..\.nuget\NuGet.exe pack DriverUtilities.nuspec -Symbols -Properties id=Driver.Utilities;major=1;minor=0;patch=0;prerelease= -Verbosity Quiet -BasePath $(OutputPath) -OutputDirectory $(OutputPath)" Outputs="$(OutputPath)\*.nupkg -Symbols"/>
   </Target>
 </Project>
