@@ -14,7 +14,10 @@
     <tags>Binary Analysis</tags>
   </metadata>
   <files>
-        <file src='Driver.Utilities.dll' target='lib\net40\Driver.Utilities.dll'/>
-        <file src='Driver.Utilities.dll' target='lib\net45\Driver.Utilities.dll'/>
+    <file src='Driver.Utilities.dll' target='lib\net40\Driver.Utilities.dll'/>
+    <file src='Driver.Utilities.pdb' target='lib\net45\Driver.Utilities.pdb'/>
+    <file src='Driver.Utilities.dll' target='lib\net40\Driver.Utilities.dll'/>
+    <file src='Driver.Utilities.pdb' target='lib\net45\Driver.Utilities.pdb'/>
+    <file src="..\..\..\..\src\**\*.cs" target="src" />    
   </files>
 </package>

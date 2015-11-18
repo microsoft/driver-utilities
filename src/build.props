@@ -4,9 +4,9 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">Any CPU</Platform>
-    <IntermediateOutputPath>$(MsBuildThisFileDirectory)..\obj\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</IntermediateOutputPath>
-    <OutputPath>$(MsBuildThisFileDirectory)..\bin\$(MSBuildProjectName)\$(Platform)_$(Configuration)\</OutputPath>
-    <DataModelGeneratorPath>$(MsBuildThisFileDirectory)..\bin\DataModelGenerator\$(Platform)_$(Configuration)\</DataModelGeneratorPath>
+    <IntermediateOutputPath>$(MsBuildThisFileDirectory)..\bld\obj\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+    <OutputPath>$(MsBuildThisFileDirectory)..\bld\bin\$(MSBuildProjectName)\$(Platform)_$(Configuration)\</OutputPath>
+    <DataModelGeneratorPath>$(MsBuildThisFileDirectory)..\bld\bin\DataModelGenerator\$(Platform)_$(Configuration)\</DataModelGeneratorPath>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <RestorePackages>true</RestorePackages>
