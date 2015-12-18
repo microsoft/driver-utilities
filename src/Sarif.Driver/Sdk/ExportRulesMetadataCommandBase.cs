@@ -15,7 +15,7 @@ using Newtonsoft.Json;
 
 namespace Microsoft.CodeAnalysis.Sarif.Driver.Sdk
 {
-    public abstract class ExportRulesMetadataCommandBase : DriverCommand<ExportRulesMetadataOptions>
+    public abstract class ExportRulesMetadataCommandBase : PlugInDriverCommand<ExportRulesMetadataOptions>
     {
 
         public override int Run(ExportRulesMetadataOptions exportOptions)

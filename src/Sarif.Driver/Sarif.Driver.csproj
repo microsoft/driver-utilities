@@ -132,6 +132,7 @@
     <Compile Include="Sdk\MessageUtilities.cs" />
     <Compile Include="Sdk\NoteDescriptors.cs" />
     <Compile Include="Sdk\PerLanguageOption.cs" />
+    <Compile Include="Sdk\PlugInDriverCommand.cs" />
     <Compile Include="Sdk\PropertyBag.cs" />
     <Compile Include="Sdk\PropertyBagExtensionMethods.cs" />
     <Compile Include="Sdk\ResultLogger.cs" />

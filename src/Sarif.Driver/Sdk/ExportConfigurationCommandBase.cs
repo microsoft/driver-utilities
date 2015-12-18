@@ -9,7 +9,7 @@ using System.Reflection;
 
 namespace Microsoft.CodeAnalysis.Sarif.Driver.Sdk
 {
-    public abstract class ExportConfigurationCommandBase : DriverCommand<ExportConfigurationOptions>
+    public abstract class ExportConfigurationCommandBase : PlugInDriverCommand<ExportConfigurationOptions>
     {
         public override int Run(ExportConfigurationOptions exportOptions)
         {

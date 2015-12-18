@@ -9,14 +9,6 @@ namespace Microsoft.CodeAnalysis.Sarif.Driver.Sdk
 {
     public abstract class DriverCommand<T> 
     {
-        public virtual IEnumerable<Assembly> DefaultPlugInAssemblies
-        {
-            get { return null;  }
-            set { throw new InvalidOperationException(); }
-        }
-
-        public abstract string Prerelease { get; }
-
         abstract public int Run(T options);
 
         public const int FAILURE = 1;
