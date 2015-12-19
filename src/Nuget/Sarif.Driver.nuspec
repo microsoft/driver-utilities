@@ -3,11 +3,11 @@
   <metadata>
     <id>$id$</id>
     <version>$major$.$minor$.$patch$$prerelease$</version>
-    <title>Microsoft SARIF Driver Framework</title>
+    <title>Microsoft SARIF Driver Framework (includes SARIF SDK)</title>
     <authors>Microsoft</authors>
     <owners>Michael C. Fanning, Billy O'Neal</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>SARIF-based classes and utilities for building static analysis drivers</description>
+    <description>SARIF-based classes and utilities for building static analysis drivers. Includes the SARIF SDK.</description>
     <releaseNotes>Version $major$.$minor$.$patch$$prerelease$ of the Microsoft SARIF Driver Utilities</releaseNotes>
     <copyright>Copyright Microsoft 2015</copyright>
     <licenseUrl>https://github.com/Microsoft/driver-utilities/blob/master/LICENSE</licenseUrl>

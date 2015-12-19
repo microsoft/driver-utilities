@@ -6,7 +6,7 @@ SETLOCAL
 
 set MAJOR=1
 set MINOR=0
-set PATCH=6
+set PATCH=9
 set PRERELEASE=-beta
 
 set VERSION_CONSTANTS=src\Sarif.Driver\VersionConstants.cs
